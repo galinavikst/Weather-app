@@ -1,0 +1,72 @@
+h1,
+h2,
+h4 {
+  margin-top: 35px;
+}
+
+h1,
+h2,
+h4,
+h5,
+p {
+  text-align: center;
+}
+.container-page {
+  display: flex;
+  justify-content: space-around;
+  margin: 3% 8%;
+}
+strong {
+  font-size: xx-large;
+}
+
+.today-temperature,
+#description {
+  font-size: x-large;
+}
+.form {
+  position: relative;
+  margin-top: 21em;
+  padding: 20px;
+  width: 80%;
+}
+.btn {
+  display: block;
+}
+.btn:hover {
+  background-color: rgb(80, 79, 79);
+}
+ul {
+  text-align: center;
+  margin-top: 35%;
+}
+li {
+  list-style: none;
+}
+.list {
+  line-height: 3;
+}
+
+.main {
+  flex-grow: 0.3;
+}
+.city-now {
+  position: relative;
+  margin-top: 10em;
+}
+
+.today {
+  flex-grow: 0.3;
+}
+p {
+  font-size: larger;
+}
+.forecast {
+  flex-grow: 0.1;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  font-size: larger;
+}

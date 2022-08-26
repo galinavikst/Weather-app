@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Weather frame</title>
+  </head>
+  <body>
+    <div class="container-page">
+      <article class="container main">
+        <div class="city-now">
+          <h1>City</h1>
+
+          <h4>
+            <div id="now">Now</div>
+            <strong> <span id="current-temperature">0</span>°C</strong>
+          </h4>
+        </div>
+        <div class="form">
+          <form>
+            <button type="button" class="btn btn-dark mb-2">
+              Current Location
+            </button>
+            <label for="text">Change City</label>
+            <input type="text" class="form-control" />
+          </form>
+        </div>
+      </article>
+      <article class="today container">
+        <h2>Today</h2>
+        <div class="row">
+          <div class="col-6">
+            <h5>Day🔆</h5>
+            <p class="today-temperature">15°C</p>
+          </div>
+          <div class="col-6">
+            <h5>Night🌙</h5>
+            <p class="today-temperature">10°C</p>
+          </div>
+        </div>
+        <div class="list">
+          <ul>
+            <li>Humidity:<span id="humidity">0</span>%</li>
+            <li>Wind:<span id="wind">0</span> km/h</li>
+            <li><span id="description"></span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="container forecast">
+        <h4>Mon 1/08/22</h4>
+        <div class="row">
+          <div class="col-6">
+            <h5>Day🔆</h5>
+            <p>15°C</p>
+          </div>
+          <div class="col-6">
+            <h5>Night🌙</h5>
+            <p>10°C</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>Tue 2/08/22</h4>
+            <div class="row">
+              <div class="col-6">
+                <h5>Day🔆</h5>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h5>Night🌙</h5>
+                <p>10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>Wed 3/08/22</h4>
+            <div class="row">
+              <div class="col-6">
+                <h5>Day🔆</h5>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h5>Night🌙</h5>
+                <p>10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>Thu 4/08/22</h4>
+            <div class="row">
+              <div class="col-6">
+                <h5>Day🔆</h5>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h5>Night🌙</h5>
+                <p>10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>Fri 5/08/22</h4>
+            <div class="row">
+              <div class="col-6">
+                <h5>Day🔆</h5>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h5>Night🌙</h5>
+                <p>10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
