@@ -1,3 +1,6 @@
+body {
+  background-color: #e7f3f2e0;
+}
 h1,
 h2,
 h4 {
@@ -14,7 +17,11 @@ p {
 .container-page {
   display: flex;
   justify-content: space-around;
-  margin: 3% 8%;
+  width: 65%;
+  margin: 2% auto;
+  border: 1px solid #cad3dde0;
+  border-radius: 5px;
+  background-color: #fafcff;
 }
 strong {
   font-size: xx-large;
@@ -65,7 +72,8 @@ p {
   flex-grow: 0.1;
 }
 a {
-  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 a:hover {
   font-size: larger;
