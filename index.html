@@ -19,20 +19,39 @@
     <container class="container page shadow-lg">
       <article class="container main">
         <div class="city-now">
-          <h1>City</h1>
+          <img
+            src="media/kisspng-thunderstorm-lightning-cloud-hurricane-5abb536bc9e2d3.9079180415222260278269.png"
+            alt="weather-icon"
+            width="250"
+          />
 
+          <h1>City<h1>
           <h4>
             <div id="now">Now</div>
-            <strong> <span id="current-temperature">0</span>°C</strong>
+            <strong>
+              <span id="current-temperature">0</span>
+              °C|°F
+            </strong>
           </h4>
+          <div class="list">
+            <ul>
+              <li id="description"></li>
+              <li>Humidity: <span id="humidity">0</span>%</li>
+              <li>Wind: <span id="wind">0</span> km/h</li>
+            </ul>
+          </div>
         </div>
         <div class="form">
           <form>
-            <button type="button" class="btn btn-dark mb-2">
+            <button
+              type="button"
+              id="button-current-location"
+              class="btn btn-secondary mb-2"
+            >
               Current Location
             </button>
-            <label for="text">Change City</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" placeholder="Change City" />
+            <button class="btn btn-dark mt-2" id="button-search">Search</button>
           </form>
         </div>
       </article>
@@ -48,15 +67,6 @@
             <p class="today-temperature">10°C</p>
           </div>
         </div>
-        <div class="list">
-          <ul>
-            <li>Humidity:<span id="humidity">0</span>%</li>
-            <li>Wind:<span id="wind">0</span> km/h</li>
-            <li><span id="description"></span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="container forecast">
         <h4>Mon 1/08/22</h4>
         <div class="row">
           <div class="col-6">

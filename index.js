@@ -36,16 +36,19 @@ function getCurrentTemp(response) {
   console.log(response.data);
   let temp = response.data.main.temp;
   let cityName = response.data.name;
+  let countryName = response.data.sys.country;
   let humid = response.data.main.humidity;
   let windSpeed = response.data.wind.speed;
   let descrip = response.data.weather[0].description;
   let h1 = document.querySelector("h1");
+  let country = document.querySelector("#country");
   let currentTemperature = document.querySelector("#current-temperature");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
   currentTemperature.innerHTML = Math.round(temp);
-  h1.innerHTML = cityName;
+  h1.innerHTML = `${cityName}, ${countryName}`;
+
   humidity.innerHTML = humid;
   wind.innerHTML = Math.round(windSpeed);
   description.innerHTML = `"${descrip}"`;
@@ -69,5 +72,5 @@ function navigatorOn(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
-let button = document.querySelector("button");
-button.addEventListener("click", navigatorOn);
+let buttonCurrentLocation = document.querySelector("#button-current-location");
+buttonCurrentLocation.addEventListener("click", navigatorOn);
