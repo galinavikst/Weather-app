@@ -47,8 +47,8 @@ function getCurrentTemp(response) {
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
   currentTemperature.innerHTML = Math.round(temp);
-  h1.innerHTML = `${cityName}, ${countryName}`;
-
+  h1.innerHTML = `${cityName}, `;
+  country.innerHTML = countryName;
   humidity.innerHTML = humid;
   wind.innerHTML = Math.round(windSpeed);
   description.innerHTML = `"${descrip}"`;
@@ -74,3 +74,5 @@ function navigatorOn(event) {
 }
 let buttonCurrentLocation = document.querySelector("#button-current-location");
 buttonCurrentLocation.addEventListener("click", navigatorOn);
+let searchButton = document.querySelector("#button-search");
+searchButton.addEventListener("click", getCityInputValue);

@@ -24,8 +24,10 @@
             alt="weather-icon"
             width="250"
           />
-
-          <h1>City<h1>
+          <div class="city-country">
+            <h1>City</h1>
+            <span id="country"></span>
+          </div>
           <h4>
             <div id="now">Now</div>
             <strong>
@@ -51,88 +53,99 @@
               Current Location
             </button>
             <input type="text" class="form-control" placeholder="Change City" />
-            <button class="btn btn-dark mt-2" id="button-search">Search</button>
+            <button class="btn btn-dark mt-2 mb-2" id="button-search">
+              Search
+            </button>
           </form>
         </div>
       </article>
-      <article class="today container">
-        <h2>Today</h2>
-        <div class="row">
-          <div class="col-6">
-            <h5>Day</h5>
-            <p class="today-temperature">15°C</p>
-          </div>
-          <div class="col-6">
-            <h5>Night</h5>
-            <p class="today-temperature">10°C</p>
-          </div>
-        </div>
-        <h4>Mon 1/08/22</h4>
-        <div class="row">
-          <div class="col-6">
-            <h5>Day</h5>
-            <p>15°C</p>
-          </div>
-          <div class="col-6">
-            <h5>Night</h5>
-            <p>10°C</p>
+      <article class="forecast container">
+        <div class="row-day shadow">
+          <div class="col-12">
+            <h4>Today</h4>
+
+            <div class="row">
+              <div class="col-6">
+                <h2>🌕</h2>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h2>🌑</h2>
+                <p>10°C</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row-day shadow">
+          <div class="col-12">
+            <h4>Mon 1/08/22</h4>
+            <div class="row">
+              <div class="col-6">
+                <h2>🌕</h2>
+                <p>15°C</p>
+              </div>
+              <div class="col-6">
+                <h2>🌑</h2>
+                <p>10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-day shadow">
           <div class="col-12">
             <h4>Tue 2/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h5>Day</h5>
+                <h2>🌕</h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h5>Night</h5>
+                <h2>🌑</h2>
                 <p>10°C</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row-day shadow">
           <div class="col-12">
             <h4>Wed 3/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h5>Day</h5>
+                <h2>🌕</h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h5>Night</h5>
+                <h2>🌑</h2>
                 <p>10°C</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row-day shadow">
           <div class="col-12">
             <h4>Thu 4/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h5>Day</h5>
+                <h2>🌕</h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h5>Night</h5>
+                <h2>🌑</h2>
                 <p>10°C</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row-day shadow">
           <div class="col-12">
             <h4>Fri 5/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h5>Day</h5>
+                <h2>🌕</h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h5>Night</h5>
+                <h2>🌑</h2>
                 <p>10°C</p>
               </div>
             </div>

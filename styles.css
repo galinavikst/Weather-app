@@ -2,24 +2,25 @@ body {
   background-color: #e7f3f2e0;
 }
 
-h2,
 h4 {
-  margin-top: 30px;
+  line-height: inherit;
 }
 
 h1,
 h2,
 h4,
-h5,
 p {
   text-align: center;
   margin-bottom: 0;
+}
+h1 {
+  display: inline;
 }
 .page {
   display: flex;
   justify-content: space-around;
   max-width: fit-content;
-  margin: 2% auto;
+  margin: 2% auto 0 auto;
   border: 1px solid #cad3dde0;
   border-radius: 5px;
   background-color: #fafcff;
@@ -57,11 +58,18 @@ a:hover {
 #description {
   font-size: x-large;
 }
-
+#country {
+  font-size: x-large;
+}
+.city-country {
+  text-align: center;
+}
 .form {
   position: relative;
   margin-top: 3em;
-  padding: 12px;
+}
+.form-control {
+  width: 57%;
 }
 .btn {
   display: block;
@@ -72,4 +80,17 @@ a:hover {
 
 .main {
   padding: 0;
+}
+.forecast {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  padding: 0;
+}
+.row-day {
+  border: none;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #ecf5f4e0;
+}
+.row-day:hover {
 }
