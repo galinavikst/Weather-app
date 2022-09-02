@@ -19,7 +19,7 @@ h1 {
 .page {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 30%;
   margin: 2% auto 0 auto;
   border: 1px solid #cad3dde0;
   border-radius: 5px;
