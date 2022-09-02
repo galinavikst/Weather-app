@@ -19,7 +19,7 @@ h1 {
 .page {
   display: flex;
   justify-content: space-around;
-  max-width: fit-content;
+  width: 50%;
   margin: 2% auto 0 auto;
   border: 1px solid #cad3dde0;
   border-radius: 5px;
@@ -28,7 +28,7 @@ h1 {
 @media (max-width: 440px) {
   .page {
     display: block;
-    max-width: none;
+    width: 100%;
   }
 }
 img {
@@ -37,11 +37,12 @@ img {
 }
 ul {
   text-align: center;
-  line-height: 2;
+
   padding: 35px 0;
 }
 li {
   list-style: none;
+  line-height: 2;
 }
 p {
   font-size: larger;
@@ -74,16 +75,22 @@ a:hover {
 .btn {
   display: block;
 }
-.btn:hover {
+.btn-dark:hover {
   background-color: rgb(80, 79, 79);
 }
-
+.btn-transparent:hover {
+  color: rgb(58, 126, 210);
+  cursor: pointer;
+}
+.btn-transparent:focus {
+  box-shadow: none;
+}
 .main {
   padding: 0;
 }
 .forecast {
-  margin-top: 13px;
-  margin-bottom: 13px;
+  flex-shrink: 2;
+  margin: 13px 0;
   padding: 0;
 }
 .row-day {

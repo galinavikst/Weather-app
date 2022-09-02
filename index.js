@@ -34,24 +34,32 @@ function getCityInputValue(event) {
 
 function getCurrentTemp(response) {
   console.log(response.data);
-  let temp = response.data.main.temp;
+  let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
   let countryName = response.data.sys.country;
   let humid = response.data.main.humidity;
-  let windSpeed = response.data.wind.speed;
+  let windSpeed = Math.round(response.data.wind.speed);
   let descrip = response.data.weather[0].description;
+  let icon = response.data.weather[0].icon;
+  let feelsLike = Math.round(response.data.main.feels_like);
   let h1 = document.querySelector("h1");
   let country = document.querySelector("#country");
   let currentTemperature = document.querySelector("#current-temperature");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
-  currentTemperature.innerHTML = Math.round(temp);
+  let iconUrl = document.querySelector("img");
+
+  iconUrl.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+  currentTemperature.innerHTML = temp;
   h1.innerHTML = `${cityName}, `;
   country.innerHTML = countryName;
   humidity.innerHTML = humid;
-  wind.innerHTML = Math.round(windSpeed);
-  description.innerHTML = `"${descrip}"`;
+  wind.innerHTML = windSpeed;
+  description.innerHTML = `"${descrip}, feels like ${feelsLike}°C"`;
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", getCityInputValue);

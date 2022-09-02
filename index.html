@@ -19,11 +19,7 @@
     <container class="container page shadow-lg">
       <article class="container main">
         <div class="city-now">
-          <img
-            src="media/kisspng-thunderstorm-lightning-cloud-hurricane-5abb536bc9e2d3.9079180415222260278269.png"
-            alt="weather-icon"
-            width="250"
-          />
+          <img src="" alt="weather-icon" width="200" />
           <div class="city-country">
             <h1>City</h1>
             <span id="country"></span>
@@ -38,6 +34,7 @@
           <div class="list">
             <ul>
               <li id="description"></li>
+              <li id="feels-like"></li>
               <li>Humidity: <span id="humidity">0</span>%</li>
               <li>Wind: <span id="wind">0</span> km/h</li>
             </ul>
@@ -48,9 +45,9 @@
             <button
               type="button"
               id="button-current-location"
-              class="btn btn-secondary mb-2"
+              class="btn btn-transparent p-0"
             >
-              Current Location
+              👉🏻Current Location
             </button>
             <input type="text" class="form-control" placeholder="Change City" />
             <button class="btn btn-dark mt-2 mb-2" id="button-search">
