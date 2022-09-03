@@ -103,3 +103,12 @@ a:hover {
   border-radius: 5px;
   background-color: #ecf5f4e0;
 }
+
+.night {
+  animation-duration: 6s;
+  color: #8d8882;
+}
+.day {
+  animation-duration: 7s;
+  color: #f7d00f;
+}
