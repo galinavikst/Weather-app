@@ -31,15 +31,21 @@ function getCityInputValue(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(getCurrentTemp);
 }
+function visitApp() {
+  let city = "Farsta";
+  let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getCurrentTemp);
+}
+visitApp();
 
 function getCurrentTemp(response) {
-  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
   let countryName = response.data.sys.country;
   let humid = response.data.main.humidity;
   let windSpeed = Math.round(response.data.wind.speed);
-  let descrip = response.data.weather[0].description;
+  let descrip = response.data.weather[0].main;
   let icon = response.data.weather[0].icon;
   let feelsLike = Math.round(response.data.main.feels_like);
   let h1 = document.querySelector("h1");
@@ -49,7 +55,6 @@ function getCurrentTemp(response) {
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
   let iconUrl = document.querySelector("img");
-
   iconUrl.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
@@ -59,16 +64,12 @@ function getCurrentTemp(response) {
   country.innerHTML = countryName;
   humidity.innerHTML = humid;
   wind.innerHTML = windSpeed;
-  description.innerHTML = `"${descrip}, feels like ${feelsLike}°C"`;
+  description.innerHTML = `${descrip}, feels like ${feelsLike}°C`;
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", getCityInputValue);
 
 function showCurrentLocation(position) {
-  console.log(position);
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
