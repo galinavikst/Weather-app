@@ -23,24 +23,12 @@ function getCurrentTime() {
 }
 getCurrentTime();
 
-function getCityInputValue(event) {
-  event.preventDefault();
-  let input = document.querySelector("input");
-  let city = input.value;
-  let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(getCurrentTemp);
-}
-function visitApp() {
-  let city = "Farsta";
-  let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(getCurrentTemp);
-}
-visitApp();
-
 function getCurrentTemp(response) {
+  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
+  let fTemp = Math.round(temp * 1.8 + 32);
+  console.log(temp);
+  console.log(fTemp);
   let cityName = response.data.name;
   let countryName = response.data.sys.country;
   let humid = response.data.main.humidity;
@@ -65,11 +53,42 @@ function getCurrentTemp(response) {
   humidity.innerHTML = humid;
   wind.innerHTML = windSpeed;
   description.innerHTML = `${descrip}, feels like ${feelsLike}°C`;
+
+  let fTempLink = document.querySelector("#fahrenheit");
+  let cTempLink = document.querySelector("#celcius");
+  fTempLink.addEventListener("click", getFTemp);
+  cTempLink.addEventListener("click", getCTemp);
 }
-let form = document.querySelector("form");
-form.addEventListener("submit", getCityInputValue);
+
+function getFTemp(response) {
+  let temp = Math.round(response.data.main.temp);
+  let fTemp = Math.round(temp * 1.8 + 32);
+  console.log(fTemp);
+  let currentTempElement = document.querySelector("#current-temperature");
+  currentTempElement.innerHTML = fTemp;
+}
+function getCTemp(response) {
+  let temp = Math.round(response.data.main.temp);
+  let currentTempElement = document.querySelector("#current-temperature");
+  currentTempElement.innerHTML = temp;
+}
+
+function getCityInputValue(event) {
+  event.preventDefault();
+  let input = document.querySelector("input");
+  let city = input.value;
+  let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getCurrentTemp);
+}
+function visitApp(city) {
+  let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getCurrentTemp);
+}
 
 function showCurrentLocation(position) {
+  console.log(position);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
@@ -83,5 +102,11 @@ function navigatorOn(event) {
 }
 let buttonCurrentLocation = document.querySelector("#button-current-location");
 buttonCurrentLocation.addEventListener("click", navigatorOn);
+
 let searchButton = document.querySelector("#button-search");
 searchButton.addEventListener("click", getCityInputValue);
+
+let form = document.querySelector("form");
+form.addEventListener("submit", getCityInputValue);
+
+visitApp("Farsta");

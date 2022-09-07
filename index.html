@@ -32,7 +32,8 @@
             <div id="now">Now</div>
             <strong>
               <span id="current-temperature">0</span>
-              °C|°F
+              <a href="#" id="celcius">°C</a>
+              | <a href="#" id="fahrenheit">°F</a>
             </strong>
           </h4>
           <div class="list">
@@ -53,7 +54,11 @@
             >
               👉🏻Current Location
             </button>
-            <input type="text" class="form-control" placeholder="Change City" />
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Change City"
+            />
             <button class="btn btn-dark mt-2 mb-2" id="button-search">
               Search
             </button>
@@ -68,12 +73,12 @@
             <div class="row">
               <div class="col-6">
                 <h2>
-                  <i class="day fa-solid fa-spin fa-certificate"></i>
+                  <i class="day fa-solid fa-certificate"></i>
                 </h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -84,11 +89,11 @@
             <h4>Mon 1/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h2><i class="day fa-solid fa-spin fa-certificate"></i></h2>
+                <h2><i class="day fa-solid fa-certificate"></i></h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -99,11 +104,11 @@
             <h4>Tue 2/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h2><i class="day fa-solid fa-spin fa-certificate"></i></h2>
+                <h2><i class="day fa-solid fa-certificate"></i></h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -114,11 +119,11 @@
             <h4>Wed 3/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h2><i class="day fa-solid fa-spin fa-certificate"></i></h2>
+                <h2><i class="day fa-solid fa-certificate"></i></h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -129,11 +134,11 @@
             <h4>Thu 4/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h2><i class="day fa-solid fa-spin fa-certificate"></i></h2>
+                <h2><i class="day fa-solid fa-certificate"></i></h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -144,11 +149,11 @@
             <h4>Fri 5/08/22</h4>
             <div class="row">
               <div class="col-6">
-                <h2><i class="day fa-solid fa-spin fa-certificate"></i></h2>
+                <h2><i class="day fa-solid fa-certificate"></i></h2>
                 <p>15°C</p>
               </div>
               <div class="col-6">
-                <h2><i class="night fa-spin fa-solid fa-moon"></i></h2>
+                <h2><i class="night fa-solid fa-moon"></i></h2>
                 <p>10°C</p>
               </div>
             </div>
@@ -157,7 +162,10 @@
       </article>
     </container>
 
-    <a href="https://github.com/galinavikst/Weather-app" target="_blank"
+    <a
+      href="https://github.com/galinavikst/Weather-app"
+      target="_blank"
+      id="gitHub"
       >GitHub repository</a
     >
 

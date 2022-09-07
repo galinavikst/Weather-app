@@ -30,7 +30,7 @@ li {
 p {
   font-size: larger;
 }
-a {
+#gitHub {
   display: block;
   text-align: center;
 }
@@ -54,18 +54,28 @@ a {
     width: 100%;
   }
 }
-a:hover {
+#celcius,
+#fahrenheit {
+  text-decoration: none;
+}
+#celcius:hover,
+#fahrenheit:hover {
+  text-decoration: underline;
+  font-size: larger;
+}
+#gitHub:hover {
   font-size: larger;
 }
 .today-temperature,
-#description {
-  font-size: x-large;
-}
+#description,
 #country {
   font-size: x-large;
 }
 .city-country {
   text-align: center;
+}
+#current-temperature {
+  font-size: xx-large;
 }
 .form {
   position: relative;
@@ -105,10 +115,8 @@ a:hover {
 }
 
 .night {
-  animation-duration: 6s;
   color: #8d8882;
 }
 .day {
-  animation-duration: 7s;
   color: #f7d00f;
 }
