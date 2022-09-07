@@ -14,7 +14,6 @@ p {
 h1 {
   display: inline;
 }
-
 img {
   display: block;
   margin: 0 auto;
@@ -58,10 +57,13 @@ p {
 #fahrenheit {
   text-decoration: none;
 }
-#celcius:hover,
-#fahrenheit:hover {
-  text-decoration: underline;
-  font-size: larger;
+.active {
+  font-size: xx-large;
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  color: black;
 }
 #gitHub:hover {
   font-size: larger;
