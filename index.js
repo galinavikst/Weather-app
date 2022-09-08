@@ -85,6 +85,8 @@ function getCityInputValue(event) {
   axios.get(apiUrl).then(getCurrentTemp);
   let cTempLink = document.querySelector("#celcius");
   cTempLink.classList.add("active");
+  let fTempLink = document.querySelector("#fahrenheit");
+  fTempLink.classList.remove("active");
 }
 
 function visitApp(city) {
@@ -104,6 +106,8 @@ function showCurrentLocation(position) {
   axios.get(apiUrl).then(getCurrentTemp);
   let cTempLink = document.querySelector("#celcius");
   cTempLink.classList.add("active");
+  let fTempLink = document.querySelector("#fahrenheit");
+  fTempLink.classList.remove("active");
 }
 
 function navigatorOn(event) {
