@@ -114,6 +114,40 @@ function navigatorOn(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
+
+function forecast() {
+  let forecastSpace = document.querySelector(".forecast");
+  let forecastCodeHTML = `<div class="forecast-day">`;
+  let days = ["Today", "Monday", "Tursday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function displayAllForecast(day) {
+    forecastCodeHTML =
+      forecastCodeHTML +
+      `
+     <div class="row-day shadow">
+      <h4>${day}</h4>
+      <div class="row">
+        <div class="col-6">
+          <h2>
+            <i class="day fa-solid fa-certificate"></i>
+          </h2>
+          <p>15°C</p>
+        </div>
+        <div class="col-6">
+          <h2>
+            <i class="night fa-solid fa-moon"></i>
+          </h2>
+          <p>10°C</p>
+        </div>
+      </div>
+    </div>
+  `;
+  });
+  forecastCodeHTML = forecastCodeHTML + `</div>`;
+  forecastSpace.innerHTML = forecastCodeHTML;
+}
+
+forecast();
+
 let temp = null;
 
 let buttonCurrentLocation = document.querySelector("#button-current-location");

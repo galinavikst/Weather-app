@@ -80,8 +80,6 @@ p {
   font-size: xx-large;
 }
 .form {
-  position: relative;
-  margin-top: 4em;
   padding-left: 5px;
   width: 80%;
 }
@@ -104,9 +102,9 @@ p {
 }
 .forecast {
   display: grid;
+  padding: 0;
   flex-shrink: 2;
   margin: 13px 0;
-  padding: 0;
   white-space: nowrap;
 }
 .row-day {
