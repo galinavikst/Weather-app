@@ -9,7 +9,6 @@ h2,
 h4,
 p {
   text-align: center;
-  margin-bottom: 0;
 }
 h1 {
   display: inline;
@@ -28,6 +27,7 @@ li {
 }
 p {
   font-size: larger;
+  font-weight: 600;
 }
 #gitHub {
   display: block;
@@ -113,9 +113,6 @@ p {
   border-radius: 5px;
   background-color: #ecf5f4e0;
 }
-.night {
-  color: #8d8882;
-}
-.day {
-  color: #f7d00f;
+#min-temp {
+  opacity: 0.6;
 }

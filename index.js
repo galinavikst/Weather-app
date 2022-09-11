@@ -162,9 +162,6 @@ function forecast(response) {
 
   forecastArrayData.forEach(function displayAllForecast(forecastData, index) {
     if (index < 6) {
-      if (index === 0) {
-        getWeekDays(forecastData.dt) === "Today";
-      }
       forecastCodeHTML =
         forecastCodeHTML +
         `
@@ -172,19 +169,16 @@ function forecast(response) {
       <h4>${getWeekDays(forecastData.dt)}</h4>
       <div class="row">
         <div class="col-6">
-          <h2> 
-            <i class="day fa-solid fa-certificate"></i>
-          </h2>
-          <p>${Math.round(forecastData.temp.max)}°C</p>
+            <img src="media/circle-empty.png" alt="day-night-icon" width="25" />
+          <p id="max-temp">${Math.round(forecastData.temp.max)}°C</p>
         </div>
         <div class="col-6">
-          <h2>
-            <i class="night fa-solid fa-moon"></i>
-          </h2>
-          <p>${Math.round(forecastData.temp.min)}°C</p>
+          <img src="media/circle-full.png" alt="day-night-icon" width="25" />
+          <p id="min-temp">${Math.round(forecastData.temp.min)}°C</p>
         </div>
       </div>
     </div>
+      
   `;
     }
   });
