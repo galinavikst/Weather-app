@@ -33,6 +33,11 @@ function getCurrentTemp(response) {
   let descrip = response.data.weather[0].main;
   let icon = response.data.weather[0].icon;
   let feelsLike = Math.round(response.data.main.feels_like);
+  let coordLon = response.data.coord.lon;
+  let coordLat = response.data.coord.lat;
+  console.log(coordLat);
+  console.log(coordLon);
+  getForecastData(coordLat, coordLon);
   let h1 = document.querySelector("h1");
   let country = document.querySelector("#country");
   let currentTemperature = document.querySelector("#current-temperature");
@@ -54,6 +59,15 @@ function getCurrentTemp(response) {
   let cTempLink = document.querySelector("#celcius");
   fTempLink.addEventListener("click", getFTemp);
   cTempLink.addEventListener("click", getCTemp);
+}
+
+function getForecastData(coordLat, coordLon) {
+  console.log(coordLat);
+  console.log(coordLon);
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordLat}&lon=${coordLon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(forecast);
 }
 
 function getFTemp(event) {
@@ -114,39 +128,69 @@ function navigatorOn(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
+function getWeekDays(unixTime) {
+  let date = new Date(unixTime * 1000);
+  let weekDay = date.getDay();
+  let day = date.getDate();
+  let month = date.getMonth();
+  let monthName = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return `${days[weekDay]} ${day}/${monthName[month]}`;
+}
 
-function forecast() {
+function forecast(response) {
+  console.log(response.data.daily);
+  let forecastArrayData = response.data.daily;
+  let icon = forecastArrayData[0].weather[0].icon;
+  console.log(icon);
+  let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
   let forecastSpace = document.querySelector(".forecast");
   let forecastCodeHTML = `<div class="forecast-day">`;
-  let days = ["Today", "Monday", "Tursday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function displayAllForecast(day) {
-    forecastCodeHTML =
-      forecastCodeHTML +
-      `
+
+  forecastArrayData.forEach(function displayAllForecast(forecastData, index) {
+    if (index < 6) {
+      if (index === 0) {
+        getWeekDays(forecastData.dt) === "Today";
+      }
+      forecastCodeHTML =
+        forecastCodeHTML +
+        `
      <div class="row-day shadow">
-      <h4>${day}</h4>
+      <h4>${getWeekDays(forecastData.dt)}</h4>
       <div class="row">
         <div class="col-6">
-          <h2>
+          <h2> 
             <i class="day fa-solid fa-certificate"></i>
           </h2>
-          <p>15°C</p>
+          <p>${Math.round(forecastData.temp.max)}°C</p>
         </div>
         <div class="col-6">
           <h2>
             <i class="night fa-solid fa-moon"></i>
           </h2>
-          <p>10°C</p>
+          <p>${Math.round(forecastData.temp.min)}°C</p>
         </div>
       </div>
     </div>
   `;
+    }
   });
   forecastCodeHTML = forecastCodeHTML + `</div>`;
   forecastSpace.innerHTML = forecastCodeHTML;
 }
-
-forecast();
 
 let temp = null;
 
