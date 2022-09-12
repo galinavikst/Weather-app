@@ -167,12 +167,12 @@ function forecast(response) {
         `
      <div class="row-day shadow">
       <h4>${getWeekDays(forecastData.dt)}</h4>
-      <div class="row">
-        <div class="col-6">
+      <div class="row g-0">
+        <div class="col-6 max">
             <img src="media/circle-empty.png" alt="day-night-icon" width="25" />
           <p id="max-temp">${Math.round(forecastData.temp.max)}°C</p>
         </div>
-        <div class="col-6">
+        <div class="col-6 min">
           <img src="media/circle-full.png" alt="day-night-icon" width="25" />
           <p id="min-temp">${Math.round(forecastData.temp.min)}°C</p>
         </div>

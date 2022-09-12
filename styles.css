@@ -28,6 +28,7 @@ li {
 p {
   font-size: larger;
   font-weight: 600;
+  margin: 0;
 }
 #gitHub {
   display: block;
@@ -42,7 +43,7 @@ p {
   border-radius: 5px;
   background-color: #fafcff;
 }
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
   .page {
     width: 100%;
   }
@@ -75,6 +76,7 @@ p {
 }
 .city-country {
   text-align: center;
+  white-space: nowrap;
 }
 #current-temperature {
   font-size: xx-large;
@@ -102,7 +104,7 @@ p {
 }
 .forecast {
   display: grid;
-  padding: 0;
+  padding: 0 0 0 10px;
   flex-shrink: 2;
   margin: 13px 0;
   white-space: nowrap;
@@ -110,8 +112,13 @@ p {
 .row-day {
   border: none;
   margin: 10px 0;
+  padding: 0 5px 10px;
   border-radius: 5px;
   background-color: #ecf5f4e0;
+}
+
+.max {
+  border-right: 1px solid #b9c1c9e0;
 }
 #min-temp {
   opacity: 0.6;
