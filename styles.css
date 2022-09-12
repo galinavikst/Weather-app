@@ -116,7 +116,12 @@ p {
   border-radius: 5px;
   background-color: #ecf5f4e0;
 }
-
+.today-box h4 {
+  font-size: xx-large;
+}
+.today-box p {
+  font-size: x-large;
+}
 .max {
   border-right: 1px solid #b9c1c9e0;
 }

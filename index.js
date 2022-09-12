@@ -35,8 +35,6 @@ function getCurrentTemp(response) {
   let feelsLike = Math.round(response.data.main.feels_like);
   let coordLon = response.data.coord.lon;
   let coordLat = response.data.coord.lat;
-  console.log(coordLat);
-  console.log(coordLon);
   getForecastData(coordLat, coordLon);
   let h1 = document.querySelector("h1");
   let country = document.querySelector("#country");
@@ -62,8 +60,6 @@ function getCurrentTemp(response) {
 }
 
 function getForecastData(coordLat, coordLon) {
-  console.log(coordLat);
-  console.log(coordLon);
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordLat}&lon=${coordLon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
@@ -151,17 +147,27 @@ function getWeekDays(unixTime) {
   return `${days[weekDay]} ${day}/${monthName[month]}`;
 }
 
+function getTodayBoxTemp(max, min) {
+  let maxTemp = document.querySelector("#max-temp");
+  let minTemp = document.querySelector("#min-temp");
+  maxTemp.innerHTML = `${max}°C`;
+  minTemp.innerHTML = `${min}°C`;
+}
+
 function forecast(response) {
   console.log(response.data.daily);
   let forecastArrayData = response.data.daily;
+  let maxTemp = Math.round(forecastArrayData[0].temp.max);
+  let minTemp = Math.round(forecastArrayData[0].temp.min);
+  getTodayBoxTemp(maxTemp, minTemp);
   let icon = forecastArrayData[0].weather[0].icon;
   console.log(icon);
   let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-  let forecastSpace = document.querySelector(".forecast");
+  let forecastSpace = document.querySelector("#forecast");
   let forecastCodeHTML = `<div class="forecast-day">`;
 
   forecastArrayData.forEach(function displayAllForecast(forecastData, index) {
-    if (index < 6) {
+    if (index < 6 && index > 0) {
       forecastCodeHTML =
         forecastCodeHTML +
         `
@@ -177,8 +183,7 @@ function forecast(response) {
           <p id="min-temp">${Math.round(forecastData.temp.min)}°C</p>
         </div>
       </div>
-    </div>
-      
+    </div>  
   `;
     }
   });
