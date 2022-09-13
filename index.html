@@ -20,6 +20,14 @@
   </head>
   <body>
     <container class="container page shadow-lg">
+      <video
+        id="background-video"
+        autoplay
+        loop
+        muted
+        src="media/autumn-video.mp4"
+        type="video/mp4"
+      ></video>
       <article class="container main">
         <div class="city-now">
           <img src="" alt="weather-icon" width="180" />
@@ -74,7 +82,7 @@
                     alt="day-night-icon"
                     width="35"
                   />
-                  <p id="max-temp">${}°C</p>
+                  <p id="max-temp">°C</p>
                 </div>
                 <div class="col-6 min">
                   <img
@@ -82,13 +90,13 @@
                     alt="day-night-icon"
                     width="35"
                   />
-                  <p id="min-temp">${}°C</p>
+                  <p id="min-temp">°C</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="forecast">(created in JS)</div>
+        <div id="forecast"></div>
       </article>
     </container>
     <a
