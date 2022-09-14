@@ -1,19 +1,18 @@
-body {
-  background-color: #e7f3f2e0;
-}
-h4 {
-  display: inline;
-  line-height: inherit;
-}
 h1,
 h2,
 h4,
 p,
-.cur-data {
+.cur-data,
+.forecast-header {
   text-align: center;
 }
-h1 {
+h1,
+h4,
+#day-icon {
   display: inline;
+}
+h4 {
+  line-height: inherit;
 }
 img {
   display: block;
@@ -21,7 +20,7 @@ img {
 }
 ul {
   text-align: center;
-  padding: 35px 0;
+  padding: 50px 0;
 }
 li {
   list-style: none;
@@ -32,17 +31,14 @@ p {
   font-weight: 600;
   margin: 0;
 }
-#gitHub {
-  display: block;
-  text-align: center;
-}
 .page {
   display: flex;
   justify-content: space-around;
   width: 40%;
   margin: 2% auto 0 auto;
-  border: 1px solid #cad3dde0;
+  border: 2px solid #ecf5f4e0;
   border-radius: 5px;
+  background-color: #72adad5c;
 }
 @media (max-width: 1240px) {
   .page {
@@ -67,9 +63,6 @@ p {
 .active:hover {
   color: black;
 }
-#gitHub:hover {
-  font-size: larger;
-}
 .today-temperature,
 #description,
 #country,
@@ -79,6 +72,7 @@ p {
 .city-country {
   text-align: center;
   white-space: nowrap;
+  margin-top: 40px;
 }
 #current-temperature {
   font-size: xx-large;
@@ -102,24 +96,20 @@ p {
 }
 .main {
   display: grid;
-  padding: 0;
+  text-shadow: 0 0 black;
 }
 .forecast {
   display: grid;
   padding: 0 0 0 10px;
   flex-shrink: 2;
   margin: 13px 0;
-  white-space: nowrap;
-}
-.forecast-header {
-  text-align: end;
 }
 .row-day {
-  border: none;
+  border: 1px solid #dfe5e36b;
   margin: 10px 0;
   padding: 0 5px 10px;
   border-radius: 5px;
-  background-color: #ecf5f4e0;
+  background-color: #c5e1ebab;
 }
 .today-box h4 {
   font-size: xx-large;
@@ -127,14 +117,8 @@ p {
 .today-box p {
   font-size: x-large;
 }
-.max {
-}
 .min {
-  border-left: 1px solid #b9c1c9e0;
-}
-#day-icon {
-  display: inline;
-  margin: 0;
+  border-left: 1px solid #5c656ed1;
 }
 #min-temp {
   opacity: 0.6;
@@ -143,6 +127,10 @@ p {
   position: fixed;
   top: 0;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.6;
   object-fit: cover;
+}
+.footer {
+  text-align: center;
+  color: #262a2cab;
 }

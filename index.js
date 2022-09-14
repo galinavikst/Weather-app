@@ -124,29 +124,18 @@ function navigatorOn(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
+
 function getWeekDays(unixTime) {
   let date = new Date(unixTime * 1000);
   let weekDay = date.getDay();
   let day = date.getDate();
   let month = date.getMonth();
-  let monthName = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+  if (month < 10) {
+    month = `0${month}`;
+  }
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return `${days[weekDay]} ${day}/${monthName[month]}`;
+  return `${days[weekDay]} ${day}/${month}`;
 }
-
 function getTodayBoxData(max, min, icon) {
   let maxTemp = document.querySelector("#max-temp");
   let minTemp = document.querySelector("#min-temp");
