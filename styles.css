@@ -2,12 +2,14 @@ body {
   background-color: #e7f3f2e0;
 }
 h4 {
+  display: inline;
   line-height: inherit;
 }
 h1,
 h2,
 h4,
-p {
+p,
+.cur-data {
   text-align: center;
 }
 h1 {
@@ -70,7 +72,8 @@ p {
 }
 .today-temperature,
 #description,
-#country {
+#country,
+#now {
   font-size: x-large;
 }
 .city-country {
@@ -108,6 +111,9 @@ p {
   margin: 13px 0;
   white-space: nowrap;
 }
+.forecast-header {
+  text-align: end;
+}
 .row-day {
   border: none;
   margin: 10px 0;
@@ -122,18 +128,21 @@ p {
   font-size: x-large;
 }
 .max {
-  border-right: 1px solid #b9c1c9e0;
+}
+.min {
+  border-left: 1px solid #b9c1c9e0;
+}
+#day-icon {
+  display: inline;
+  margin: 0;
 }
 #min-temp {
   opacity: 0.6;
 }
 #background-video {
-  position: absolute;
+  position: fixed;
+  top: 0;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.3;
   object-fit: cover;
-  width: inherit;
-  max-width: inherit;
-  height: 124vh;
-  border-radius: inherit;
 }

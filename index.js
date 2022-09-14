@@ -147,11 +147,13 @@ function getWeekDays(unixTime) {
   return `${days[weekDay]} ${day}/${monthName[month]}`;
 }
 
-function getTodayBoxTemp(max, min) {
+function getTodayBoxData(max, min, icon) {
   let maxTemp = document.querySelector("#max-temp");
   let minTemp = document.querySelector("#min-temp");
+  let dayIcon = document.querySelector("#day-icon");
   maxTemp.innerHTML = `${max}°C`;
   minTemp.innerHTML = `${min}°C`;
+  dayIcon.setAttribute("src", icon);
 }
 
 function forecast(response) {
@@ -159,11 +161,12 @@ function forecast(response) {
   let forecastArrayData = response.data.daily;
   let maxTemp = Math.round(forecastArrayData[0].temp.max);
   let minTemp = Math.round(forecastArrayData[0].temp.min);
-  getTodayBoxTemp(maxTemp, minTemp);
   let icon = forecastArrayData[0].weather[0].icon;
   console.log(icon);
   let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+
   let forecastSpace = document.querySelector("#forecast");
+  getTodayBoxData(maxTemp, minTemp, iconUrl);
   let forecastCodeHTML = `<div class="forecast-day">`;
 
   forecastArrayData.forEach(function displayAllForecast(forecastData, index) {
@@ -172,18 +175,31 @@ function forecast(response) {
         forecastCodeHTML +
         `
      <div class="row-day shadow">
-      <h4>${getWeekDays(forecastData.dt)}</h4>
-      <div class="row g-0">
-        <div class="col-6 max">
-            <img src="media/circle-empty.png" alt="day-night-icon" width="25" />
-          <p id="max-temp">${Math.round(forecastData.temp.max)}°C</p>
-        </div>
-        <div class="col-6 min">
-          <img src="media/circle-full.png" alt="day-night-icon" width="25" />
-          <p id="min-temp">${Math.round(forecastData.temp.min)}°C</p>
-        </div>
-      </div>
-    </div>  
+              <div class="forecast-header">
+                <h4>${getWeekDays(forecastData.dt)}</h4>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastData.weather[0].icon
+                }@2x.png" alt="forecast icon" id="day-icon" width="70" />
+              </div>
+              <div class="row g-0">
+                <div class="col-6 max">
+                  <img
+                    src="media/circle-empty.png"
+                    alt="day-night-icon"
+                    width="15"
+                  />
+                  <p id="max-temp">${Math.round(forecastData.temp.max)}°C</p>
+                </div>
+                <div class="col-6 min">
+                  <img
+                    src="media/circle-full.png"
+                    alt="day-night-icon"
+                    width="15"
+                  />
+                  <p id="min-temp">${Math.round(forecastData.temp.min)}°C</p>
+                </div>
+              </div>
+            </div>
   `;
     }
   });

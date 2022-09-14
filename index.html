@@ -19,15 +19,15 @@
     <title>Weather frame</title>
   </head>
   <body>
+    <video
+      id="background-video"
+      autoplay
+      loop
+      muted
+      src="media/autumn-video.mp4"
+      type="video/mp4"
+    ></video>
     <container class="container page shadow-lg">
-      <video
-        id="background-video"
-        autoplay
-        loop
-        muted
-        src="media/autumn-video.mp4"
-        type="video/mp4"
-      ></video>
       <article class="container main">
         <div class="city-now">
           <img src="" alt="weather-icon" width="180" />
@@ -35,12 +35,12 @@
             <h1>City</h1>
             <span id="country"></span>
           </div>
-          <h4>
+          <div class="cur-data">
             <div id="now">Now</div>
-            <strong> <span id="current-temperature">0</span></strong>
+            <strong><span id="current-temperature">0</span></strong>
             <a href="#" id="celcius">°C</a>
             | <a href="#" id="fahrenheit">°F</a>
-          </h4>
+          </div>
           <div class="list">
             <ul>
               <li id="description"></li>
@@ -74,13 +74,16 @@
         <div class="today-box">
           <div class="forecast-day">
             <div class="row-day shadow">
-              <h4>Today</h4>
+              <div class="forecast-header">
+                <h4>Today</h4>
+                <img src="" alt="forecast icon" id="day-icon" width="110" />
+              </div>
               <div class="row g-0">
                 <div class="col-6 max">
                   <img
                     src="media/circle-empty.png"
                     alt="day-night-icon"
-                    width="35"
+                    width="25"
                   />
                   <p id="max-temp">°C</p>
                 </div>
@@ -88,7 +91,7 @@
                   <img
                     src="media/circle-full.png"
                     alt="day-night-icon"
-                    width="35"
+                    width="25"
                   />
                   <p id="min-temp">°C</p>
                 </div>
