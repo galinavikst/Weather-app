@@ -120,6 +120,9 @@ p {
 .min {
   border-left: 1px solid #5c656ed1;
 }
+#max-temp {
+  padding-right: 4px;
+}
 #min-temp {
   opacity: 0.6;
 }
