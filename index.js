@@ -8,10 +8,26 @@ function getCurrentTime() {
     "Friday",
     "Saturday",
   ];
+  let monthName = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   let currentTime = new Date();
   let currentDay = weekDays[currentTime.getDay()];
   let currentHour = currentTime.getHours();
   let currentMinutes = currentTime.getMinutes();
+  let currentMonth = currentTime.getMonth();
+  let currentDayMonth = currentTime.getDate();
   let now = document.querySelector("#now");
   if (currentHour < 10) {
     currentHour = `0${currentHour}`;
@@ -19,7 +35,7 @@ function getCurrentTime() {
   if (currentMinutes < 10) {
     currentMinutes = `0${currentMinutes}`;
   }
-  now.innerHTML = `${currentDay}, ${currentHour}:${currentMinutes}`;
+  now.innerHTML = `${currentDay}, ${monthName[currentMonth]} ${currentDayMonth}`;
 }
 getCurrentTime();
 
@@ -131,7 +147,7 @@ function getWeekDays(unixTime) {
   let day = date.getDate();
   let month = date.getMonth();
   if (month < 10) {
-    month = `0${month}`;
+    month = `0${month + 1}`;
   }
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return `${days[weekDay]} ${day}/${month}`;
