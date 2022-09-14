@@ -68,6 +68,7 @@ p {
 #country,
 #now {
   font-size: x-large;
+  white-space: nowrap;
 }
 .city-country {
   text-align: center;
