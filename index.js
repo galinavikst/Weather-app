@@ -58,7 +58,7 @@ function getCurrentTemp(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
-  let iconUrl = document.querySelector("img");
+  let iconUrl = document.querySelector("#main-icon");
   iconUrl.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
@@ -69,10 +69,6 @@ function getCurrentTemp(response) {
   humidity.innerHTML = humid;
   wind.innerHTML = windSpeed;
   description.innerHTML = `${descrip}, feels like ${feelsLike}°C`;
-  let fTempLink = document.querySelector("#fahrenheit");
-  let cTempLink = document.querySelector("#celcius");
-  fTempLink.addEventListener("click", getFTemp);
-  cTempLink.addEventListener("click", getCTemp);
 }
 
 function getForecastData(coordLat, coordLon) {
@@ -82,26 +78,6 @@ function getForecastData(coordLat, coordLon) {
   axios.get(apiUrl).then(forecast);
 }
 
-function getFTemp(event) {
-  event.preventDefault();
-  let currentTempElement = document.querySelector("#current-temperature");
-  let fTemp = Math.round(temp * 1.8 + 32);
-  currentTempElement.innerHTML = fTemp;
-  let fTempLink = document.querySelector("#fahrenheit");
-  fTempLink.classList.add("active");
-  let cTempLink = document.querySelector("#celcius");
-  cTempLink.classList.remove("active");
-}
-function getCTemp(event) {
-  event.preventDefault();
-  let currentTempElement = document.querySelector("#current-temperature");
-  currentTempElement.innerHTML = temp;
-  let cTempLink = document.querySelector("#celcius");
-  cTempLink.classList.add("active");
-  let fTempLink = document.querySelector("#fahrenheit");
-  fTempLink.classList.remove("active");
-}
-
 function getCityInputValue(event) {
   event.preventDefault();
   let input = document.querySelector("input");
@@ -109,18 +85,12 @@ function getCityInputValue(event) {
   let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(getCurrentTemp);
-  let cTempLink = document.querySelector("#celcius");
-  cTempLink.classList.add("active");
-  let fTempLink = document.querySelector("#fahrenheit");
-  fTempLink.classList.remove("active");
 }
 
 function visitApp(city) {
   let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(getCurrentTemp);
-  let cTempLink = document.querySelector("#celcius");
-  cTempLink.classList.add("active");
 }
 
 function showCurrentLocation(position) {
@@ -130,10 +100,6 @@ function showCurrentLocation(position) {
   let apiKey = "28483fb0bac69b11e99890f72d1b1c8f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(getCurrentTemp);
-  let cTempLink = document.querySelector("#celcius");
-  cTempLink.classList.add("active");
-  let fTempLink = document.querySelector("#fahrenheit");
-  fTempLink.classList.remove("active");
 }
 
 function navigatorOn(event) {

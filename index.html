@@ -19,62 +19,23 @@
     <title>Weather frame</title>
   </head>
   <body>
+    <video
+      id="background-video"
+      autoplay
+      loop
+      muted
+      src="media/autumn-video.mp4"
+      type="video/mp4"
+    ></video>
     <container class="container page shadow-lg">
-      <video
-        id="background-video"
-        autoplay
-        loop
-        muted
-        src="media/autumn-video.mp4"
-        type="video/mp4"
-      ></video>
-      <article class="container main p-0">
-        <div class="city-now">
-          <img class="mt-3" src="" alt="weather-icon" width="200" />
-          <div class="city-country">
-            <h1></h1>
-            <span id="country"></span>
+      <div class="conteiner">
+        <div class="row">
+          <div class="col-6">
+            <img id="main-icon" src="" alt="weather-icon" width="200" />
           </div>
-          <div class="cur-data">
-            <div id="now"></div>
-            <strong><span id="current-temperature"></span></strong>
-            <a href="#" id="celcius">°C</a>
-            | <a href="#" id="fahrenheit">°F</a>
-          </div>
-          <div class="list">
-            <ul>
-              <li id="description"></li>
-              <li id="feels-like"></li>
-              <li>Humidity: <span id="humidity">0</span>%</li>
-              <li>Wind: <span id="wind">0</span> km/h</li>
-            </ul>
-          </div>
-        </div>
-        <div class="form">
-          <form>
-            <button
-              type="button"
-              id="button-current-location"
-              class="btn btn-transparent p-0"
-            >
-              👉🏻Current Location
-            </button>
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Change City"
-            />
-            <button class="btn btn-dark mt-2 mb-2" id="button-search">
-              Search
-            </button>
-          </form>
-        </div>
-      </article>
-      <article class="forecast container">
-        <div class="today-box">
-          <div class="forecast-day">
-            <div class="row-day shadow">
-              <div class="forecast-header">
+          <div class="col-6">
+            <div class="row-day shadow mb-0">
+              <div class="forecast-header today-box">
                 <h4>Today</h4>
                 <img
                   class="m-0"
@@ -83,31 +44,82 @@
                   id="day-icon"
                   width="110"
                 />
-              </div>
-              <div class="row g-0">
-                <div class="col-6 max">
-                  <img
-                    src="media/circle-empty.png"
-                    alt="day-night-icon"
-                    width="25"
-                  />
-                  <p id="max-temp">°C</p>
-                </div>
-                <div class="col-6 min">
-                  <img
-                    src="media/circle-full.png"
-                    alt="day-night-icon"
-                    width="25"
-                  />
-                  <p id="min-temp">°C</p>
+
+                <div class="row g-0">
+                  <div class="col-6 max">
+                    <img
+                      src="media/circle-empty.png"
+                      alt="day-night-icon"
+                      width="25"
+                    />
+                    <p id="max-temp">°C</p>
+                  </div>
+                  <div class="col-6 min">
+                    <img
+                      src="media/circle-full.png"
+                      alt="day-night-icon"
+                      width="25"
+                    />
+                    <p id="min-temp">°C</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="forecast"></div>
-      </article>
+      </div>
+
+      <div class="row">
+        <div class="col-8 main">
+          <article class="container p-0">
+            <div class="city-now">
+              <div class="city-country">
+                <h1></h1>
+                <span id="country"></span>
+              </div>
+              <div class="cur-data">
+                <div id="now"></div>
+                <strong><span id="current-temperature"></span></strong>
+                <a href="#" id="celcius">°C</a>
+              </div>
+              <div class="list">
+                <ul>
+                  <li id="description"></li>
+                  <li id="feels-like"></li>
+                  <li>Humidity: <span id="humidity">0</span>%</li>
+                  <li>Wind: <span id="wind">0</span> km/h</li>
+                </ul>
+              </div>
+            </div>
+            <div class="form">
+              <form>
+                <button
+                  type="button"
+                  id="button-current-location"
+                  class="btn btn-transparent p-0"
+                >
+                  👉🏻Current Location
+                </button>
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Change City"
+                />
+                <button class="btn btn-dark mt-2 mb-2" id="button-search">
+                  Search
+                </button>
+              </form>
+            </div>
+          </article>
+        </div>
+        <div class="col-4">
+          <article class="forecast container">
+            <div id="forecast"></div>
+          </article>
+        </div>
+      </div>
     </container>
+
     <div class="footer">
       Coded by Halyna Stepanenko with open-source on
       <a
