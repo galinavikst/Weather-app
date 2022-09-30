@@ -112,8 +112,10 @@ function getWeekDays(unixTime) {
   let weekDay = date.getDay();
   let day = date.getDate();
   let month = date.getMonth();
-  if (month < 10) {
+  if (month < 9) {
     month = `0${month + 1}`;
+  } else {
+    month = `${month + 1}`;
   }
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return `${days[weekDay]} ${day}/${month}`;
