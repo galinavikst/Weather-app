@@ -192,3 +192,4 @@ let form = document.querySelector("form");
 form.addEventListener("submit", getCityInputValue);
 
 visitApp("Farsta");
+
