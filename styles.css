@@ -35,17 +35,13 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 40%;
+  width: 58%;
   margin: 2% auto 0 auto;
   border: 2px solid #ecf5f4e0;
   border-radius: 5px;
   background-color: #72adad5c;
 }
-@media (max-width: 1240px) {
-  .page {
-    width: 100%;
-  }
-}
+
 #celcius {
   text-decoration: none;
   color: black;
@@ -121,12 +117,26 @@ p {
 }
 #background-video {
   position: fixed;
-  top: 0;
+  top: 0; 
   z-index: -1;
-  opacity: 0.6;
-  object-fit: cover;
+  opacity: 0.8;
+  min-width: 100%;
+  min-height: 100%;
 }
+ 
+   
+  
+  
+
 .footer {
   text-align: center;
   color: #262a2cab;
+}
+@media (max-width: 1240px) {
+  .page {
+    width: 100%;
+  }
+.forecast {
+  padding: 0 5px;
+}
 }
