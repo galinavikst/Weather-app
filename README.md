@@ -10,7 +10,7 @@ The Weather App is a web application created using vanilla JavaScript, with Boot
 
 - Vanilla JavaScript
 - Bootstrap for semantic markup, CSS styles, and adaptive design
-- OpenWeather API to retrieve weather data
+- [OpenWeather API](https://openweathermap.org/api) to retrieve weather data
 - Deployed on Netlify
 
 ## Getting Started
@@ -21,6 +21,5 @@ To use the Weather App, follow these steps:
 3. Navigate to the index.html file and open it in your web browser
 4. Search for a city or use your current geolocation to view weather data
 
-Alternatively, you can simply follow the link to access the deployed app.
+Alternatively, you can simply follow the [link](https://sparkly-raindrop-0a0717.netlify.app/) to access the deployed app.
 
-The site was created with Api from [OpenWeather](https://openweathermap.org/api) and [deployed](https://sparkly-raindrop-0a0717.netlify.app/) on Netlify.
